@@ -1,0 +1,8 @@
+/*
+ *	Function: EM -> PX Conversion
+ *	--------------------------------------------------
+ */
+
+@function em($target, $context: $FONT_SIZE) {
+	@return ($target / $context) * 1em;
+}

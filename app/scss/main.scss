@@ -1,7 +1,27 @@
-body {
-  background: yellow;
-  color: #434343;
-  h1 {
-    color: #333333;
-  }
-}
+/**
+ * SCSS: Main
+ */
+
+ // Utils
+@import 'utils/variables';
+@import 'utils/colours';
+@import 'utils/functions';
+@import 'utils/mixins';
+@import 'utils/typography';
+
+// Base
+@import 'base/reset';
+@import 'base/normalise';
+@import 'base/base';
+@import 'base/forms';
+@import 'base/clearfix';
+
+// Modules
+@import 'modules/modifiers';
+@import 'modules/buttons';
+@import 'modules/grid';
+@import 'modules/containers';
+@import 'modules/blade';
+
+//Pages
+@import 'pages/language-detector';

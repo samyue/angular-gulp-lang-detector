@@ -1,0 +1,39 @@
+.language-detector {
+	.input-text {
+		height: 200px;
+	}
+
+	.results {
+		.item {
+			font-size: em(16);
+			line-height: em(30);
+			border: 1px solid $color-text;
+			margin-bottom: 10px;
+
+			@media #{$tablet} {
+				display: inline-block;
+				padding: 0 20px;
+				margin-right: 10px;
+
+
+			}
+
+			&:last-child {
+				margin-bottom: 30px;
+
+				@media #{$tablet} {
+					margin-right: 0;
+					margin-bottom: 10px;
+				}
+
+
+			}
+
+			&.matched {
+				background-color: green;
+				color: #fff;
+			}
+			
+		}
+	}
+}

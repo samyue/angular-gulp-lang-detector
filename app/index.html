@@ -1,14 +1,38 @@
 <!doctype html>
 <html lang="en" ng-app="myApp">
 <head>
-  <title>My awesome app</title>
+  <title>Language Detector</title>
   <link rel="stylesheet" href="css/main.css" />
 </head>
 <body ng-controller='LanguageDetectorCtrl'>
 
-  <h1>My awesome app</h1>
+	<div class="page-container blade language-detector">
+		
 
-  <p>{{testVar}}</p>
+	  <h1 class="margin-bottom-20">Language Detector</h1>
+		
+		<div class="grid">
+			<div class="col col-12 sm-col-8">
+				<textarea class="input-text" placeholder="Please input the text for language dectection." class="height-260"></textarea>
+				<div class="results">
+					<div class="item matched">English</div>
+					<div class="item">French</div>
+					<div class="item">German</div>
+
+				</div>
+
+			</div>
+
+			<div class="col col-12 sm-col-4">
+				<button id="button-detect" class="btn btn-primary">Detect</button>
+			</div>
+
+
+		</div>
+		
+	</div>
+
+  
 
   <script src="/js/main.js"></script>
 

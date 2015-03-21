@@ -1,0 +1,60 @@
+
+button, 
+input, 
+optgroup, 
+select, 
+textarea, .btn-group {
+	margin: 0 0 20px 0;
+}
+input[type="text"], 
+input[type="password"], 
+input[type="email"], 
+input[type="number"], 
+input[type="tel"], 
+input[type="url"], 
+textarea {
+	min-height: 50px;
+	padding: 7px 15px;
+	font-size: 15px;
+	color: $DARK-BLUE;
+	vertical-align: middle;
+	background-color: #fff;
+	background-repeat: no-repeat;
+	background-position: right center;
+	border: none;
+	border-radius: 0;
+	outline: none;
+	width: 100%;
+	box-sizing: border-box;
+	font-weight: 300;
+}
+
+input, textarea {
+	&::-webkit-input-placeholder {
+	   color: $DARK-BLUE;
+	   opacity: 0.5;
+	}
+
+	&:-moz-placeholder { /* Firefox 18- */
+	   color: $DARK-BLUE;  
+	   opacity: 0.5;
+	}
+
+	&::-moz-placeholder {  /* Firefox 19+ */
+	   color: $DARK-BLUE;  
+	   opacity: 0.5;
+	}
+
+	&:-ms-input-placeholder {  
+	   color: $DARK-BLUE;  
+	   opacity: 0.5;
+	}
+}
+
+
+
+label {
+	cursor: pointer;
+}
+
+
