@@ -37,11 +37,6 @@ var LanguageDetectorCtrl = function($scope) {
 	var sortedFrenchWords = sortWords(frenchWords);
 	var sortedGermanWords = sortWords(germanWords);
 
-	console.log("sortedEnglishWords: ", sortedEnglishWords);
-	console.log("sortedFrenchWords: ", sortedFrenchWords);
-	console.log("sortedGermanWords: ", sortedGermanWords);
-
-
 	$scope.detect = function(inputText) {
 		$scope.isEnglish = detectLanguage(inputText, sortedEnglishWords);
 		$scope.isFrench = detectLanguage(inputText, sortedFrenchWords);
@@ -9063,7 +9058,7 @@ var LanguageDetectorCtrl = require('./controllers/LanguageDetectorCtrl'); // We 
 
 var app = angular.module('myApp', []);
 app.controller('LanguageDetectorCtrl', ['$scope', LanguageDetectorCtrl]);
-}).call(this,require("oMfpAn"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_dfcae684.js","/")
+}).call(this,require("oMfpAn"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_262aac08.js","/")
 },{"./controllers/LanguageDetectorCtrl":1,"angular":7,"buffer":8,"oMfpAn":11}],6:[function(require,module,exports){
 (function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
 /**

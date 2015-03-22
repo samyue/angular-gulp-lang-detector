@@ -35,11 +35,6 @@ var LanguageDetectorCtrl = function($scope) {
 	var sortedFrenchWords = sortWords(frenchWords);
 	var sortedGermanWords = sortWords(germanWords);
 
-	console.log("sortedEnglishWords: ", sortedEnglishWords);
-	console.log("sortedFrenchWords: ", sortedFrenchWords);
-	console.log("sortedGermanWords: ", sortedGermanWords);
-
-
 	$scope.detect = function(inputText) {
 		$scope.isEnglish = detectLanguage(inputText, sortedEnglishWords);
 		$scope.isFrench = detectLanguage(inputText, sortedFrenchWords);
