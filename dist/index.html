@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+  <title>Language Detector</title>
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<body ng-controller='LanguageDetectorCtrl'>
+
+	<div class="page-container blade language-detector">
+		
+
+	  <h1 class="margin-bottom-20">Language Detector</h1>
+		
+		<div class="grid">
+			<div class="col col-12 sm-col-8">
+				<textarea ng-model="inputText" class="input-text" placeholder="Please input the text for language dectection." class="height-260"></textarea>
+				<div class="results">
+					<div class="item" ng-class="{matched:isEnglish}">English</div>
+					<div class="item" ng-class="{matched:isFrench}">French</div>
+					<div class="item" ng-class="{matched:isGerman}">German</div>
+
+				</div>
+
+			</div>
+
+			<div class="col col-12 sm-col-4">
+				<button id="button-detect" class="btn btn-primary" ng-click="detect(inputText)">Detect</button>
+			</div>
+
+
+		</div>
+		
+	</div>
+
+  
+
+  <script src="/js/main.js"></script>
+
+</body>
+</html>
