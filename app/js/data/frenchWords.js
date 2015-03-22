@@ -1,3 +1,5 @@
+'use strict';
+
 var frenchWords = [
 	"je",
 	"de",
@@ -5000,3 +5002,5 @@ var frenchWords = [
 	"lesquelles",
 	"cachette"
 ];
+
+module.exports = frenchWords;

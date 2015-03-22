@@ -1,3 +1,5 @@
+'use strict';
+
 var englishWords = [
 	"the",
 	"I",
@@ -2001,6 +2003,6 @@ var englishWords = [
 	"teen"
 ];
 
-
+module.exports = englishWords;
 
 
