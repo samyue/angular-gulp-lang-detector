@@ -3,6 +3,7 @@
 <head>
   <title>Language Detector</title>
   <link rel="stylesheet" href="./css/main.css" />
+  <script src="./bower_components/angular/angular.min.js"></script>
 </head>
 <body ng-controller='LanguageDetectorCtrl'>
 
@@ -15,9 +16,9 @@
 			<div class="col col-12 sm-col-8">
 				<textarea ng-model="inputText" class="input-text" placeholder="Please input the text for language dectection." class="height-260"></textarea>
 				<div class="results">
-					<div class="item" ng-class="{matched:isEnglish}">English</div>
-					<div class="item" ng-class="{matched:isFrench}">French</div>
-					<div class="item" ng-class="{matched:isGerman}">German</div>
+					<div class="item" ng-class="{matched:(language === 'english')}">English</div>
+					<div class="item" ng-class="{matched:(language === 'french')}">French</div>
+					<div class="item" ng-class="{matched:(language === 'german')}">German</div>
 
 				</div>
 
@@ -33,7 +34,8 @@
 	</div>
 
   
-
+	
+	<script src="./bower_components/underscore/underscore-min.js"></script>
   <script src="./js/main.js"></script>
 
 </body>

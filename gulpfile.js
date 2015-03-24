@@ -2,7 +2,6 @@
 
 var gulp = require('gulp'),
     jshint = require('gulp-jshint'),
-    browserify = require('gulp-browserify'),
     concat = require('gulp-concat'),
     rimraf = require('gulp-rimraf'),
     sass = require('gulp-sass'),
@@ -27,7 +26,7 @@ server.all('/*', function(req, res) {
 });
 
 // Dev task
-gulp.task('dev', ['clean', 'views', 'styles', 'lint', 'browserify'], function() { });
+gulp.task('dev', ['clean', 'views', 'copyFiles', 'lint', 'concat'], function() { });
 
 // Clean task
 gulp.task('clean', function() {
@@ -39,12 +38,14 @@ gulp.task('clean', function() {
 // JSHint task
 gulp.task('lint', function() {
   gulp.src('app/js/*.js')
-  .pipe(jshint())
+  .pipe(jshint({
+    "predef": ["angular"]
+  }))
   .pipe(jshint.reporter('default'));
 });
 
-// Styles task
-gulp.task('styles', function() {
+// copyFiles task
+gulp.task('copyFiles', function() {
   gulp.src('app/scss/*.scss')
   // The onerror handler prevents Gulp from crashing when you make a mistake in your SASS
   .pipe(sass({onError: function(e) { console.log(e); } }))
@@ -52,16 +53,17 @@ gulp.task('styles', function() {
   .pipe(autoprefixer('last 2 versions', '> 1%', 'ie 8'))
   // These last two should look familiar now :)
   .pipe(gulp.dest('dist/css/'));
+
+  gulp.src('app/bower_components/**/*')
+  .pipe(gulp.dest('dist/bower_components'));
+
 });
 
-// Browserify task
-gulp.task('browserify', function() {
-  // Single point of entry (make sure not to src ALL your files, browserify will figure it out)
-  gulp.src(['app/js/main.js'])
-  .pipe(browserify({
-    insertGlobals: true,
-    debug: false
-  }))
+// Concat task
+gulp.task('concat', function() {
+  
+  gulp.src(['app/js/app.js' ,'app/js/**/*.js'])
+  
   // Bundle to a single file
   .pipe(concat('main.js'))
   // Output it to our dist folder
@@ -87,14 +89,14 @@ gulp.task('watch', ['lint'], function() {
   // Start live reload
   refresh.listen(livereloadport);
 
-  // Watch our scripts, and when they change run lint and browserify
+  // Watch our scripts, and when they change run lint and concat
   gulp.watch(['app/js/*.js', 'app/js/**/*.js'],[
     'lint',
-    'browserify'
+    'concat'
   ]);
   // Watch our sass files
   gulp.watch(['app/scss/**/*.scss'], [
-    'styles'
+    'copyFiles'
   ]);
 
   gulp.watch(['app/**/*.html'], [
