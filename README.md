@@ -9,3 +9,8 @@ Demo application to detect langulages using Angular.js and Gulp.js.
 
 If you don't want to install npm, you can try the application by open the following html file:
 [codebase]/dist/index.html
+
+## How to run unit test
+Run `gulp test`
+
+To watch file changes and run test automatically, run `gulp autotest`

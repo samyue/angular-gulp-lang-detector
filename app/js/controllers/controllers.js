@@ -18,3 +18,5 @@ myControllers.controller('LanguageDetectorCtrl', ['$scope', 'languageDetection',
 
   }]);
 
+
+
