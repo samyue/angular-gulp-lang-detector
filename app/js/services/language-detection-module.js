@@ -1,7 +1,7 @@
 /*
  * languageDetectionModule Services 
  * This module contains the main business logic of language detection
- * and it exposes the method 'detect' to detect
+ * and it exposes the method 'detect' to detect in which language the text is.
  */
 
 angular.module('languageDetectionModule', [])
