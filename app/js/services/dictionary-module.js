@@ -1,11 +1,11 @@
 'use strict';
 
-/* Services */
+/* Dictionary Services 
+ * The service provides the raw arrays of words in English, French and German.
+ */
 
-var languageDetectorServices = angular.module('languageDetectorServices', []);
-
-languageDetectorServices.factory('Dictionary', [
-  function(){
+angular.module('dictionaryModule', []).
+  factory('dictionary', [ function() {
     
     var dictionary = {};
      
